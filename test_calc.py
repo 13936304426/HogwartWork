@@ -2,7 +2,7 @@ import pytest
 from pythoncode.calculator import Calculator
 
 class TestCalc:
-#self.cal = Calculator()在下面的方法中都要用到，如果每个方法里面都写入这一句会很麻烦，所以在类的开始只执行一次，然后在方法里面调用即可
+#self.cal = Calculator()在类下面的方法中都要用到，如果每个方法里面都写入这一句会很麻烦，所以在类的开始只执行一次，然后在方法里面调用即可
     def setup_class(self):
         self.cal = Calculator()
         print("开始计算")
