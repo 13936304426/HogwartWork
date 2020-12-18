@@ -48,24 +48,28 @@ class TestCalc:
 
 
     @pytest.mark.one
+    @pytest.mark.run(order=1)
     @pytest.mark.parametrize("a,b,expect",get_datas()[0],ids = get_datas()[4] )
     def test_add(self,a,b,expect,myfunction):
         assert expect == self.cal.add(a,b)
 
 
     @pytest.mark.two
+    @pytest.mark.run(order=2)
     @pytest.mark.parametrize("a,b,expect", get_datas()[1], ids=get_datas()[4])
     def test_sub(self, a, b, expect,myfunction):
         assert expect == self.cal.sub(a,b)
 
 
     @pytest.mark.three
+    @pytest.mark.run(order=3)
     @pytest.mark.parametrize("a,b,expect", get_datas()[2], ids=get_datas()[4])
     def test_mul(self,a,b,expect,myfunction):
         assert expect == self.cal.mul(a,b)
 
 
     @pytest.mark.four
+    @pytest.mark.run(order=4)
     @pytest.mark.parametrize("a,b,expect", get_datas()[3], ids=get_datas()[4])
     def test_div(self,a,b,expect,myfunction):
         assert expect == self.cal.div(a,b)
